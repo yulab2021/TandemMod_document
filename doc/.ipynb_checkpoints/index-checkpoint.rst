@@ -6,7 +6,7 @@
 Welcome to TandemMod's documentation!
 ==================================
 
-TandemMod is a deep learning framework for detecting RNA modifications in nanopore direct RNA sequencing (DRS) data. It offers three modes: de novo training, transfer learning, and prediction. Researchers can train from scratch, fine-tune pre-trained models, or apply existing models for predictions. TandemMod achieves high accuracy and has been used to identify RNA modifications in various species and conditions. It provides a user-friendly solution for studying RNA modifications and advancing our understanding of RNA biology.
+TandemMod is a deep learning framework for detecting RNA modifications in nanopore direct RNA sequencing (DRS) data. It offers three modes: de novo training, transfer learning, and prediction. Researchers can train from scratch, fine-tune pre-trained models, or apply existing models for predictions. TandemMod achieves high accuracy and can be used to identify RNA modifications in various species and conditions. It provides a user-friendly solution for studying RNA modifications.
 
 To use TandemMod, you can follow the instructions below:
 
