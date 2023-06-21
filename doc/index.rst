@@ -17,6 +17,7 @@ Contents
    :maxdepth: 2
 
    installation.rst
+   data_preprocessing.rst
    purpose.rst
    dependencies.rst
    usage.rst
