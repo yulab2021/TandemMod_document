@@ -16,12 +16,32 @@ Training from scratch
 ********************
 The de novo training mode in TandemMod enables users to train the model from scratch using their own datasets. To train a TandemMod model, both modified and modification-free Direct RNA Sequencing (DRS) data are required.
 
-Before training, the raw FAST5 files need to undergo the `data processing procedure<data_preprocessing>` . This process generates feature files specific to each modification type. The feature files should follow a naming convention that reflects the modification type they represent::
+Before training, the raw FAST5 files need to undergo the `data processing procedure <data_preprocessing>`_ . This process generates feature files specific to each modification type. The feature files should follow a naming convention that reflects the modification type they represent::
 
     |-- data
-    |   |-- unmodified.feature.tsv
+    |   |-- A.feature.tsv
     |   |-- m6A.feature.tsv
 
+In order to evaluate the performance during the training process, it is important to have a separate test dataset. Here's a script that randomly splits the feature file into training and test sets::
+
+    python scripts/train_test_split.py --input_file A.feature.tsv --train_file A_train.feature.tsv --test_file A_test.feature.tsv --train_ratio 0.8
+    python scripts/train_test_split.py --input_file m6A.feature.tsv --train_file m6A_train.feature.tsv --test_file m6A_test.feature.tsv --train_ratio 0.8
+
+Then, train the TandemMod model usting training dataset and test dataset::
+    
+    python scripts/TandemMod.py -run_mode train \
+          -new_model model/m6A.pkl \
+          -train_data_mod data/m6A_train.feature.tsv \
+          -train_data_unmod data/A_train.feature.tsv \
+          -test_data_mod data/m6A_test.feature.tsv \
+          -test_data_unmod data/A_test.feature.tsv 
+          -epoch 100
+
+The training process can be stopped manually based on the performance on the test set or by setting the maximum number of epochs. You can monitor the performance of the model on the test set during training and decide when to stop based on your desired criteria, such as reaching a certain accuracy or loss threshold.
+
+Alternatively, you can set a specific number of epochs as the maximum value for training using the ``-epoch`` argument. This allows the model to train for a fixed number of iterations, regardless of the performance on the test set. After the specified number of epochs, the training process will automatically stop.
+
+By providing these options, you have the flexibility to control the training process based on your specific requirements and preferences.
 
 Where to find the results
 -------------------------
