@@ -22,7 +22,7 @@ This section involves transforming the raw electrical signal data from nanopore 
 Basecalling
 ********************
 
-Guppy is used for basecalling in TandemMod. Guppy, as well as the now deprecated Albacore and all other basecallers, uses files in fast5 format as input. In addition to basecalling, Guppy also performs filtering of low quality reads, clipping of Oxford Nanopore adapters. More detailed documentation about Guppy can be found on the official `Nanopore Technology repository <https://github.com/nanoporetech/pyguppyclient>`_. This step can be time-consuming and may require several hours or even days to complete, depending on the computational capacity available.
+Guppy is used for basecalling in TandemMod. Guppy, as well as the now deprecated Albacore and all other basecallers, uses files in fast5 format as input. In addition to basecalling, Guppy also performs filtering of low quality reads, clipping of Oxford Nanopore adapters. More detailed documentation about Guppy can be found on the official `Nanopore Technology repository <https://github.com/nanoporetech/pyguppyclient>`_. This step can be time-consuming and may require several hours or even days to complete, depending on the computational capacity available::
 
     guppy_basecaller -i demo/fast5 -s demo/guppy --num_callers 40 --recursive --fast5_out --config rna_r9.4.1_70bps_hac.cfg
 
@@ -41,7 +41,7 @@ Argument name                       Required    Default              Description
 
 Multi-fast5 to single_fast5
 ********************
-If fast5 reads are stored at multi-reads format, ont_fast5_api is recommended to convert multi-fast5 reads to single-fast5 reads. Usually, the size of multi-reads fast5 file is about 200-300M. The ont_fast5_api is available on PyPI and can be installed via pip.
+If fast5 reads are stored at multi-reads format, ont_fast5_api is recommended to convert multi-fast5 reads to single-fast5 reads. Usually, the size of multi-reads fast5 file is about 200-300M. Convert multi-reads files to single-read files::
 
     multi_to_single_fast5 -i demo/guppy -s demo/guppy_single -t 40 --recursive 
 
@@ -53,10 +53,65 @@ Argument name                       Required    Default              Description
 -i=DIR                              Yes         NA                    Input directory, containing multi-reads FAST5 files.
 -s=DIR                              Yes         NA                    Output directory, containing single-read FAST5 files.
 -t=NUM                              No          1                     Number of processes to run.
---recursive                         Yes         None                  This Argument allows recursive processing or batch processing of files
+--recursive                         Yes         NA                    This Argument allows recursive processing or batch processing of files.
 =================================   ==========  ===================  ============================================================================================================
 
 Resquiggling
 ********************
-The resquiggling algorithm is the basis for the Tombo framework. It takes as input a read file (in FAST5 format) containing raw signal and associated base calls. The base calls are mapped to a genome or transcriptome reference and then the raw signal is assigned to the reference sequence based on an expected current level model. Tombo is used for resquiggling in TandemMod.
+The resquiggling algorithm is the basis for the Tombo framework. It takes as input a read file (in FAST5 format) containing raw signal and associated base calls. The base calls are mapped to a genome or transcriptome reference and then the raw signal is assigned to the reference sequence based on an expected current level model. Tombo is used for resquiggling in TandemMod::
+
+    tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/guppy_single  demo/reference_transcripts.fasta --processes 40 --fit-global-scale --include-event-stdev
+
+Arguments
+
+=================================   ==========  ===================  ============================================================================================================
+Argument name                       Required    Default              Description
+=================================   ==========  ===================  ============================================================================================================
+--overwrite                         Yes         NA                    Overwrite previous corrected group in FAST5 files.
+--basecall-group                    No          Basecall_1D_000       FAST5 group obtain original basecalls. 
+--processes                         No          1                     Number of processes to run.
+--fit-global-scale                  No          NA                    Apply a scaling factor.
+--include-event-stdev               No          NA                    Include the standard deviation.
+args[0]                             Yes         NA                    Fast5 basedir. 
+args[1]                             Yes         NA                    Reference transcripts, in fasta format.
+=================================   ==========  ===================  ============================================================================================================
+
+Extract 
+********************
+minimap2 is used to map basecalled sequences to reference transcripts:: 
+    
+    cat demo/guppy/pass/*.fastq >demo/m6A.fastq
+    minimap2 -ax map-ont demo/reference_transcripts.fasta demo/m6A.fastq >demo/m6A.sam
+
+Extract signal files from FAST5 files::
+
+    python scripts/extract_signal_from_fast5.py -p=40 --fast5=demo/guppy_single --reference demo/reference_transcripts.fasta --sam demo/m6A.sam -o demo/m6A --clip=10
+
+Arguments
+
+=================================   ==========  ===================  ============================================================================================================
+Argument name                       Required    Default              Description
+=================================   ==========  ===================  ============================================================================================================
+--fast5                             Yes         NA                    Fast5 basedir.
+--reference                         Yes         NA                    Reference transcripts, in fasta format.
+-p                                  No          1                     Number of processes to run.
+--sam                               Yes         NA                    Aligment results, output from minimap2.
+-o                                  Yes         NA                    Output file contraining current signals.
+--clip                              Yes         NA                    Base clip at both ends.
+=================================   ==========  ===================  ============================================================================================================
+
+Extract features from signal files::
+
+    python scripts/extract_feature_from_signal.py  -signal_file demo/m6A.signal.tsv -clip 10 -label m6A.tsv -out_dir demo
+
+Arguments
+
+=================================   ==========  ===================  ============================================================================================================
+Argument name                       Required    Default              Description
+=================================   ==========  ===================  ============================================================================================================
+-signal_file                        Yes         NA                    File contraining current signals.
+--reference                         Yes         NA                    Reference transcripts, in fasta format.
+-label                              Yes         NA                    Prefix of output.
+-out_dir                            Yes         NA                    Output directory.
+=================================   ==========  ===================  ============================================================================================================
 
