@@ -39,7 +39,7 @@ Argument name                       Required    Default              Description
 --recursive                         Yes         None                  This Argument allows recursive processing or batch processing of files
 =================================   ==========  ===================  ============================================================================================================
 
-Multi-fast5 to single_fast5
+Multi-fast5 to single-fast5
 ********************
 If fast5 reads are stored at multi-reads format, ont_fast5_api is recommended to convert multi-fast5 reads to single-fast5 reads. Usually, the size of multi-reads fast5 file is about 200-300M. Convert multi-reads files to single-read files::
 

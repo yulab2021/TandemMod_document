@@ -26,13 +26,12 @@ Contents
 
 
 
-Citing m6Anet
+Citing TandemMod
 --------------------------
-If you use m6Anet in your research, please cite
-`Christopher Hendra, et al.,Detection of m6A from direct RNA sequencing using a Multiple Instance Learning framework. *Nat Methods* (2022) <https://doi.org/10.1038/s41592-022-01666-1>`_
+If you use TandemMod in your research, please cite **************************************
 
 Contacts
 --------------------------
-m6anet is developed and maintained by `Christopher Hendra <https://github.com/chrishendra93>`_ and `Jonathan Göke <https://github.com/jonathangoeke>`_ from the Genome Institute of Singapore, A*STAR. If you want to contribute, please leave an issue in `our repo <https://github.com/GoekeLab/m6anet/issues>`_
+TandemMod is developed and maintained by `You Wu <https://github.com/paddi1990>`_ and `Xiang Yu <https://github.com/yulab2021>`_ from Shanghai Jiao Tong university. If you want to contribute or have any questions, please leave an issue in `our repo <https://github.com/yulab2021/TandemMod/issues>`_
 
 Thank you!
