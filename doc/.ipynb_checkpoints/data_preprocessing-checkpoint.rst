@@ -76,7 +76,7 @@ args[0]                             Yes         NA                    Fast5 base
 args[1]                             Yes         NA                    Reference transcripts, in fasta format.
 =================================   ==========  ===================  ============================================================================================================
 
-Extract 
+Feature extraction
 ********************
 minimap2 is used to map basecalled sequences to reference transcripts:: 
     

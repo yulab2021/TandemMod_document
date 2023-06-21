@@ -18,11 +18,10 @@ Contents
 
    installation.rst
    data_preprocessing.rst
-   purpose.rst
-   dependencies.rst
    usage.rst
-   credit.rst
-   exercises.rst
+   run_examples.rst
+   citing.rst
+
 
 
 
