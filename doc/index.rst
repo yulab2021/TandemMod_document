@@ -32,6 +32,6 @@ If you use TandemMod in your research, please cite *****************************
 
 Contacts
 --------------------------
-TandemMod is developed and maintained by `You Wu <https://github.com/paddi1990>`_ and `Xiang Yu <https://github.com/yulab2021>`_ from Shanghai Jiao Tong university. If you want to contribute or have any questions, please leave an issue in `our repo <https://github.com/yulab2021/TandemMod/issues>`_
+TandemMod is developed and maintained by `You Wu <https://github.com/paddi1990>`_ and `Xiang Yu <https://github.com/yulab2021>`_ from Shanghai Jiao Tong university. If you want to contribute or have any questions, please leave an issue in `our repository <https://github.com/yulab2021/TandemMod/issues>`_.
 
 Thank you!
