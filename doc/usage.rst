@@ -75,7 +75,7 @@ In order to evaluate the performance during the training process, it is importan
     python scripts/train_test_split.py --input_file A.feature.tsv --train_file A_train.feature.tsv --test_file A_test.feature.tsv --train_ratio 0.8
     python scripts/train_test_split.py --input_file m6A.feature.tsv --train_file m6A_train.feature.tsv --test_file m6A_test.feature.tsv --train_ratio 0.8
 
-To train the TandemMod model using both the training dataset, you can set the ``-run_mode`` argument to "train". This allows the model to be trained from scratch. Test data are required to evaluation the model performance.
+To train the TandemMod model using labelled training dataset, you can set the ``-run_mode`` argument to "train". This allows the model to be trained from scratch. Test data are required to evaluation the model performance.
 
     python scripts/TandemMod.py -run_mode train \
           -new_model model/m6A.pkl \
@@ -83,7 +83,7 @@ To train the TandemMod model using both the training dataset, you can set the ``
           -train_data_unmod data/A_train.feature.tsv \
           -test_data_mod data/m6A_test.feature.tsv \
           -test_data_unmod data/A_test.feature.tsv \
-          -epoch 100
+          --epoch 100
 
 The training process can be stopped manually based on the performance on the test set or by setting the maximum number of epochs. You can monitor the performance of the model on the test set during training and decide when to stop based on your desired criteria, such as reaching a certain accuracy or loss threshold. Alternatively, you can set a specific number of epochs as the maximum value for training using the ``-epoch`` argument. This allows the model to train for a fixed number of iterations, regardless of the performance on the test set. After the specified number of epochs, the training process will automatically stop. By providing these options, you have the flexibility to control the training process based on your specific requirements and preferences. The training process should be something like this::
     
