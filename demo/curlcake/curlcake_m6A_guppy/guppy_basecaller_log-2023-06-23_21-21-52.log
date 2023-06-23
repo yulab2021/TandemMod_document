@@ -1,0 +1,19 @@
+2023-06-23 21:21:52.952615 [guppy/message] ONT Guppy basecalling software version 6.1.5+446c355, minimap2 version 2.22-r1101
+config file:        /opt/ont/guppy/data/rna_r9.4.1_70bps_hac.cfg
+model file:         /opt/ont/guppy/data/template_rna_r9.4.1_70bps_hac.jsn
+input path:         demo/curlcake/curlcake_m6A
+save path:          demo/curlcake/curlcake_m6A_guppy
+chunk size:         2000
+chunks per runner:  512
+minimum qscore:     7
+records per file:   4000
+num basecallers:    40
+cpu mode:           ON
+threads per caller: 4
+
+Use of this software is permitted solely under the terms of the end user license agreement (EULA).By running, copying or accessing this software, you are demonstrating your acceptance of the EULA.
+The EULA may be found in /opt/ont/guppy/bin
+
+2023-06-23 21:21:52.953222 [guppy/info] crashpad_handler not supported on this platform.
+2023-06-23 21:21:56.229065 [guppy/error] boost::filesystem::directory_iterator::construct: No such file or directory: "demo/curlcake/curlcake_m6A"
+2023-06-23 21:21:56.229271 [guppy/warning] An error has occurred. Aborting.

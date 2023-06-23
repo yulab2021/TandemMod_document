@@ -33,7 +33,7 @@ The following modules are needed to run TandemMod.
      - 1.6.3
    * - guppy
      - 6.1.5
-   * - tombo
+   * - ont-tombo
      - 1.5.1
    * - ont_vbz_hdf_plugin
      - 1.0.1
