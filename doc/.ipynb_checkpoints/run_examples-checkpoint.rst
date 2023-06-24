@@ -475,7 +475,7 @@ After the data processing and model training, the following files should be gene
 Predict m6A sites in human cell lines
 ********************
 
-HEK293T nanopore data is publicly available and can be downloaded `SG-NEx project <https://groups.google.com/g/sg-nex-updates>`_. In this demo, subset of the HEK293T nanopore data was taken for demonstration purposes due to the large size of the original datasets. The demo datasets were located under ``./demo/HEK293T/`` directory.
+HEK293T nanopore data is publicly available and can be downloaded from the `SG-NEx project <https://groups.google.com/g/sg-nex-updates>`_. In this demo, subset of the HEK293T nanopore data was taken for demonstration purposes due to the large size of the original datasets. The demo datasets were located under ``./demo/HEK293T/`` directory.
 ::
     demo
     └── HEK293T
@@ -525,7 +525,7 @@ In the feature extraction step, the motif pattern should be provided using the a
 
 **7. Predict m6A sites**
 
-To predict m6A sites in HEK293T nanopore data using a pretrained model, you can set the ``--run_mode`` argument to "predict".  You can specify the pretrained model by using the argument ``--pretrained_model`` and the new model save path by using the argument ``--new_model``. The model's training epochs can be defined using the argument ``--epochs``, and the model states will be saved at the end of each epoch. TandemMod will preferentially use the ``GPU`` for training if CUDA is available on your device; otherwise, it will utilize the ``CPU`` mode. The training process duration can vary, depending on the size of your dataset and the computational capacity, and may last for several hours. 
+To predict m6A sites in HEK293T nanopore data using a pretrained model, you can set the ``--run_mode`` argument to "predict".  You can specify the pretrained model by using the argument ``--pretrained_model``. 
 ::
     python scripts/TandemMod.py --run_mode predict \
           --pretrained_model demo/model/m6A.demo.IVET.pkl \

@@ -475,7 +475,7 @@ After the data processing and model training, the following files should be gene
 Predict m6A sites in human cell lines
 ********************
 
-HEK293T nanopore data is publicly available and can be downloaded `SG-NEx project <https://groups.google.com/g/sg-nex-updates>`_. In this demo, subset of the HEK293T nanopore data was taken for demonstration purposes due to the large size of the original datasets. The demo datasets were located under ``./demo/HEK293T/`` directory.
+HEK293T nanopore data is publicly available and can be downloaded from the `SG-NEx project <https://groups.google.com/g/sg-nex-updates>`_. In this demo, subset of the HEK293T nanopore data was taken for demonstration purposes due to the large size of the original datasets. The demo datasets were located under ``./demo/HEK293T/`` directory.
 ::
     demo
     └── HEK293T
@@ -525,26 +525,12 @@ In the feature extraction step, the motif pattern should be provided using the a
 
 **7. Predict m6A sites**
 
-To predict m6A sites in HEK293T nanopore data using a pretrained model, you can set the ``--run_mode`` argument to "predict".  You can specify the pretrained model by using the argument ``--pretrained_model`` and the new model save path by using the argument ``--new_model``. The model's training epochs can be defined using the argument ``--epochs``, and the model states will be saved at the end of each epoch. TandemMod will preferentially use the ``GPU`` for training if CUDA is available on your device; otherwise, it will utilize the ``CPU`` mode. The training process duration can vary, depending on the size of your dataset and the computational capacity, and may last for several hours. 
+To predict m6A sites in HEK293T nanopore data using a pretrained model, you can set the ``--run_mode`` argument to "predict".  You can specify the pretrained model by using the argument ``--pretrained_model``. 
 ::
     python scripts/TandemMod.py --run_mode predict \
           --pretrained_model demo/model/m6A.demo.IVET.pkl \
           --feature_file demo/HEK293T/HEK293T.feature.tsv \
           --predict_result demo/HEK293T/HEK293T.prediction.tsv
-
-During training process, the following information can be used to monitor and evaluate the performance of the transfered model:
-::
-    device= cpu
-    transfer learning process.
-    data loaded.
-    start training...
-    Epoch 0-0 Train acc: 0.544000,Test Acc: 0.489786,time0:00:08.688707
-    Epoch 1-0 Train acc: 0.674000,Test Acc: 0.857939,time0:00:05.190997
-    Epoch 2-0 Train acc: 0.748000,Test Acc: 0.813835,time0:00:05.426035
-    Epoch 3-0 Train acc: 0.778000,Test Acc: 0.753946,time0:00:05.180632
-    Epoch 4-0 Train acc: 0.854000,Test Acc: 0.776230,time0:00:05.236281
-    Epoch 5-0 Train acc: 0.886000,Test Acc: 0.817549,time0:00:05.219122
-    Epoch 6-0 Train acc: 0.926000,Test Acc: 0.889044,time0:00:05.470729
 
 
 During the prediction process, TandemMod generates the following files. The prediction result file is named "HEK293T.prediction.tsv". 
