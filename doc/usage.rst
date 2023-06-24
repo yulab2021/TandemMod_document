@@ -77,12 +77,12 @@ In order to evaluate the performance during the training process, it is importan
 
 To train the TandemMod model using labelled training dataset, you can set the ``--run_mode`` argument to "train". This allows the model to be trained from scratch. Test data are required to evaluation the model performance.
 
-    python scripts/TandemMod.py -run_mode train \
-          -new_model model/m6A.pkl \
-          -train_data_mod data/m6A_train.feature.tsv \
-          -train_data_unmod data/A_train.feature.tsv \
-          -test_data_mod data/m6A_test.feature.tsv \
-          -test_data_unmod data/A_test.feature.tsv \
+    python scripts/TandemMod.py --run_mode train \
+          --new_model model/m6A.pkl \
+          --train_data_mod data/m6A_train.feature.tsv \
+          --train_data_unmod data/A_train.feature.tsv \
+          --test_data_mod data/m6A_test.feature.tsv \
+          --test_data_unmod data/A_test.feature.tsv \
           --epoch 100
 
 The training process can be stopped manually based on the performance on the test set or by setting the maximum number of epochs. You can monitor the performance of the model on the test set during training and decide when to stop based on your desired criteria, such as reaching a certain accuracy or loss threshold. Alternatively, you can set a specific number of epochs as the maximum value for training using the ``-epoch`` argument. This allows the model to train for a fixed number of iterations, regardless of the performance on the test set. After the specified number of epochs, the training process will automatically stop. By providing these options, you have the flexibility to control the training process based on your specific requirements and preferences. The training process should be something like this::
@@ -98,13 +98,13 @@ Transfer learning
 ********************
 In transfer learning mode, you can used a pretrained model to retrain the bottom layers to identify new modification. This mode leverages the knowledge acquired by the pretrained model on a large dataset and applies it to a specific target task with potentially limited data. To fine-tune the TandemMod model using other dataset, you can utilize the transfer run mode by setting the ``--run_mode`` argument to "transfer"::
 
-    python scripts/TandemMod.py -run_mode transfer \
-          -pretrained_model model/m6A.pkl \
-          -new_model model/m6Am.pkl
-          -train_data_mod data/m6Am_train.tsv \
-          -train_data_unmod data/A_train.tsv \
-          -test_data_mod data/m6Am_test.tsv \
-          -test_data_unmod data/A_test.tsv  \
+    python scripts/TandemMod.py --run_mode transfer \
+          --pretrained_model model/m6A.pkl \
+          --new_model model/m6Am.pkl
+          --train_data_mod data/m6Am_train.tsv \
+          --train_data_unmod data/A_train.tsv \
+          --test_data_mod data/m6Am_test.tsv \
+          --test_data_unmod data/A_test.tsv  \
           -epoch 100
 
 
@@ -112,10 +112,10 @@ Prediction
 ********************
 Pretained models were saved in directory ``./models``. You can load pretrained models to predict modification for new data by setting the ``--run_mode`` argument to "predict". Before prediction, the raw FAST5 files need to undergo the `data processing procedure <data_preprocessing>`_ ::
 
-    python scripts/TandemMod.py -run_mode predict \
-          -pretrained_model model/m6A.pkl \
-          -feature_file data/WT.feature.tsv
-          -predict_result data/WT.predict.tsv
+    python scripts/TandemMod.py --run_mode predict \
+          --pretrained_model model/m6A.pkl \
+          --feature_file data/WT.feature.tsv
+          --predict_result data/WT.predict.tsv
 
 The prediction result "data/WT.predict.tsv" has the following format::
 

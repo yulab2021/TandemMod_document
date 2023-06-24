@@ -105,4 +105,4 @@ In the given command, please replace "read_level_prediction.tsv" with the conver
 
 Futher analysis
 ********************
-The other data processing and plot scripts are located under the `plot <./plot/>`_  directory.
+The other data processing and plot scripts are located under the `plot <https://github.com/yulab2021/TandemMod/tree/master/plot>`_  directory.
