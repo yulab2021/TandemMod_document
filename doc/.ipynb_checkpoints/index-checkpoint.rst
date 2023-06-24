@@ -20,7 +20,7 @@ Contents
    data_preprocessing.rst
    usage.rst
    run_examples.rst
-   data_preprocessing.rst
+   data_postprocessing.rst
    help.rst
    citing.rst
 
