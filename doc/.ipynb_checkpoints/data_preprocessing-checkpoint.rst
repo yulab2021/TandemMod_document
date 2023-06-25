@@ -85,7 +85,7 @@ minimap2 is used to map basecalled sequences to reference transcripts::
 
 Extract signal files from FAST5 files::
     
-    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/guppy_single --reference demo/reference_transcripts.fasta --sam demo/m6A.sam -output demo/m6A.signal.tsv --clip 10
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/guppy_single --reference demo/reference_transcripts.fasta --sam demo/m6A.sam --output demo/m6A.signal.tsv --clip 10
 
 Arguments
 
