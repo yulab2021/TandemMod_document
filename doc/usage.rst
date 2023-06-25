@@ -105,7 +105,7 @@ In transfer learning mode, you can used a pretrained model to retrain the bottom
           --train_data_unmod data/A_train.tsv \
           --test_data_mod data/m6Am_test.tsv \
           --test_data_unmod data/A_test.tsv  \
-          -epoch 100
+          --epoch 100
 
 
 Prediction

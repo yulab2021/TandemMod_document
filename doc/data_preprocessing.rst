@@ -84,8 +84,8 @@ minimap2 is used to map basecalled sequences to reference transcripts::
     minimap2 -ax map-ont demo/reference_transcripts.fasta demo/m6A.fastq >demo/m6A.sam
 
 Extract signal files from FAST5 files::
-
-    python scripts/extract_signal_from_fast5.py -p=40 --fast5=demo/guppy_single --reference demo/reference_transcripts.fasta --sam demo/m6A.sam -o demo/m6A --clip=10
+    
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/guppy_single --reference demo/reference_transcripts.fasta --sam demo/m6A.sam -output demo/m6A.signal.tsv --clip 10
 
 Arguments
 
@@ -102,7 +102,7 @@ Argument name                       Required    Default              Description
 
 Extract features from signal files::
 
-    python scripts/extract_feature_from_signal.py  -signal_file demo/m6A.signal.tsv -clip 10 -label m6A.tsv -out_dir demo
+    python scripts/extract_feature_from_signal.py  --signal_file demo/m6A.signal.tsv --clip 10 --output demo/m6A.feature.tsv --motif DRACH
 
 Arguments
 
