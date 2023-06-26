@@ -18,7 +18,7 @@ The following modules are needed to run TandemMod.
    * - python 
      - 3.7.3
    * - h5py
-     - 2.9.0
+     - 3.8.0
    * - statsmodels
      - 0.10.0
    * - joblib 
@@ -31,8 +31,6 @@ The following modules are needed to run TandemMod.
      - 0.22
    * - torch
      - 1.9.1
-   * - scipy
-     - 1.6.3
    * - guppy
      - 6.1.5
    * - ont-tombo
@@ -41,14 +39,16 @@ The following modules are needed to run TandemMod.
      - 1.0.1
    * - ont-fast5-api
      - 4.1.1
+   * - numpy
+     - 1.20.0
 
 Conda is recommended for package management, you can create a new conda environment and then install the packages. Here's an example of how you can do it. Create a new conda environment::
     
-    conda create -n tandemmod_env python=3.7.3
+    conda create -n TandemMod python=3.7.3
 
 Activate the newly created environment::
 
-    conda activate tandemmod_env
+    conda activate TandemMod
 
 Install the required modules::
 
@@ -57,30 +57,29 @@ Install the required modules::
 
     conda install -c bioconda samtools=1.3.1
     conda install -c bioconda minimap2=2.17
-    conda install -c anaconda h5py=2.9.0
+    conda install -c anaconda h5py=3.8.0
     conda install -c conda-forge statsmodels=0.10.0
     conda install -c conda-forge joblib=0.16.0
     conda install -c bioconda pysam=0.16.0.1
     conda install -c conda-forge tqdm=4.39.0
     conda install -c anaconda scikit-learn=0.22
-    conda install -c pytorch torch=1.9.1
-    conda install -c anaconda scipy=1.6.3
     conda install -c bioconda ont-tombo=1.5.1
     conda install -c bioconda ont_vbz_hdf_plugin=1.0.1
     conda install -c bioconda ont-fast5-api=4.1.1
+    conda install -c conda-forge numpy=1.20.0
 
-Or, you can use pip to install the modules::
+Or, some of the modules can be installed by pip::
 
-    pip install h5py==2.9.0
+    pip install h5py==3.8.0
     pip install statsmodels==0.10.0
     pip install joblib==0.16.0
     pip install pysam==0.16.0.1
     pip install tqdm==4.39.0
     pip install scikit-learn==0.22
     pip install torch==1.9.1
-    pip install scipy==1.6.3
     pip install ont-tombo==1.5.1
     pip install ont-fast5-api==4.1.1
+    pip install numpy==1.20.0
 
 Guppy can be obtained from `Oxford Nanopore Technologies <https://nanoporetech.com/>`_ or from this `mirror <https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu-6.1.5-1.el7.x86_64.rpm>`_. Install Guppy using dpkg::
 

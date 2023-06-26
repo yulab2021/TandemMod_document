@@ -69,11 +69,11 @@ minimap2 is used to map basecalled sequences to reference transcripts. The outpu
 Extract signals and features from resquiggled fast5 files using the following python scripts.
 ::
     #m6A
-    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_m6A_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_m6A.sam --output demo/IVET/m6A.signal.tsv --clip=10
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_m6A_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_m6A.sam --output demo/IVET/m6A.signal.tsv --clip 10
     python scripts/extract_feature_from_signal.py  --signal_file demo/IVET/m6A.signal.tsv --clip 10 --output demo/IVET/m6A.feature.tsv --motif DRACH
     
     #unmodified
-    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_unmod_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_unmod.sam --output demo/IVET/unmod.signal.tsv --clip=10
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_unmod_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_unmod.sam --output demo/IVET/unmod.signal.tsv --clip 10
     python scripts/extract_feature_from_signal.py  --signal_file demo/IVET/unmod.signal.tsv --clip 10 --output demo/IVET/unmod.feature.tsv --motif DRACH
 
 In the feature extraction step, the motif pattern should be provided using the argument ``--motif``. The base symbols of the motif follow the IUB code standard. Here is the full definition of IUB base symbols:
