@@ -11,22 +11,16 @@ The following modules are needed to run TandemMod.
 
    * - module
      - version
-   * - samtools
-     - 1.3.1
    * - minimap2
      - 2.17-r941
    * - python 
-     - 3.7.3
+     - 3.7.12
    * - h5py
-     - 3.8.0
+     - 3.7.0
    * - statsmodels
      - 0.10.0
    * - joblib 
      - 0.16.0
-   * - pysam
-     - 0.16.0.1
-   * - tqdm
-     - 4.39.0
    * - scikit-learn
      - 0.22
    * - torch
@@ -40,7 +34,7 @@ The following modules are needed to run TandemMod.
    * - ont-fast5-api
      - 4.1.1
    * - numpy
-     - 1.20.0
+     - 1.19.5
 
 Conda is recommended for package management, you can create a new conda environment and then install the packages. Here's an example of how you can do it. Create a new conda environment::
     
