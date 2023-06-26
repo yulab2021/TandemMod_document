@@ -44,7 +44,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step.
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step.
 ::
     #m6A
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/IVET/IVET_m6A_guppy_single  demo/IVET_reference.fa --processes 40 --fit-global-scale --include-event-stdev
@@ -69,11 +69,11 @@ minimap2 is used to map basecalled sequences to reference transcripts. The outpu
 Extract signals and features from resquiggled fast5 files using the following python scripts.
 ::
     #m6A
-    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_m6A_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_m6A.sam --output demo/IVET/m6A.signal.tsv --clip=10
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_m6A_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_m6A.sam --output demo/IVET/m6A.signal.tsv --clip 10
     python scripts/extract_feature_from_signal.py  --signal_file demo/IVET/m6A.signal.tsv --clip 10 --output demo/IVET/m6A.feature.tsv --motif DRACH
     
     #unmodified
-    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_unmod_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_unmod.sam --output demo/IVET/unmod.signal.tsv --clip=10
+    python scripts/extract_signal_from_fast5.py -p 40 --fast5 demo/IVET/IVET_unmod_guppy_single --reference demo/IVET_reference.fa --sam demo/IVET/IVET_unmod.sam --output demo/IVET/unmod.signal.tsv --clip 10
     python scripts/extract_feature_from_signal.py  --signal_file demo/IVET/unmod.signal.tsv --clip 10 --output demo/IVET/unmod.feature.tsv --motif DRACH
 
 In the feature extraction step, the motif pattern should be provided using the argument ``--motif``. The base symbols of the motif follow the IUB code standard. Here is the full definition of IUB base symbols:
@@ -214,7 +214,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step. Curlcake reference file can be download `here <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE124309&format=file&file=GSE124309%5FFASTA%5Fsequences%5Fof%5FCurlcakes%2Etxt%2Egz>`_. 
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step. Curlcake reference file can be download `here <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE124309&format=file&file=GSE124309%5FFASTA%5Fsequences%5Fof%5FCurlcakes%2Etxt%2Egz>`_. 
 ::
     #m6A
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/curlcake/curlcake_m6A_guppy_single  demo/curlcake_reference.fa --processes 40 --fit-global-scale --include-event-stdev
@@ -366,7 +366,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step. ELIGOS reference file can be download `here <https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/nar/49/2/10.1093_nar_gkaa620/1/gkaa620_supplemental_files.zip?Expires=1690555116&Signature=Mv7ppemTnplIZAvv6G3W-lob1eQwK5IvNeIIF-1GM8Jy93AdT6ALUynRjW3HQAyCMgkMW-0WnXktuVJfKDCUXiiwvjZ9z5iO5LksCl1e6yEA5dgRlr-FVUrDbj81NIfUJNhKReo5gxRYc~f7wbFZRcy9CcSB-D1DloUmv-4qdcydr35sM-YDKgfyNfaE-ZKnCZZ1KydDNtx7oRfYHCof-a3oHSNgxn5DFM9bGCq147cw6i9B1bCURAPLltdPzR4i7cBXmIRoNZuVkjLe8EktJPg47v9ElqlPUlZfAqoaESbmPtEs8NLoX~~82o~eMrjwomK4W5CzgwAZhJJIeelr7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA>`_. 
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step. ELIGOS reference file can be download `here <https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/nar/49/2/10.1093_nar_gkaa620/1/gkaa620_supplemental_files.zip?Expires=1690555116&Signature=Mv7ppemTnplIZAvv6G3W-lob1eQwK5IvNeIIF-1GM8Jy93AdT6ALUynRjW3HQAyCMgkMW-0WnXktuVJfKDCUXiiwvjZ9z5iO5LksCl1e6yEA5dgRlr-FVUrDbj81NIfUJNhKReo5gxRYc~f7wbFZRcy9CcSB-D1DloUmv-4qdcydr35sM-YDKgfyNfaE-ZKnCZZ1KydDNtx7oRfYHCof-a3oHSNgxn5DFM9bGCq147cw6i9B1bCURAPLltdPzR4i7cBXmIRoNZuVkjLe8EktJPg47v9ElqlPUlZfAqoaESbmPtEs8NLoX~~82o~eMrjwomK4W5CzgwAZhJJIeelr7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA>`_. 
 ::
     #m7G
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/ELIGOS/ELIGOS_m7G_guppy_single  demo/ELIGOS_reference.fa --processes 40 --fit-global-scale --include-event-stdev
@@ -531,20 +531,6 @@ To predict m6A sites in HEK293T nanopore data using a pretrained model, you can 
           --pretrained_model demo/model/m6A.demo.IVET.pkl \
           --feature_file demo/HEK293T/HEK293T.feature.tsv \
           --predict_result demo/HEK293T/HEK293T.prediction.tsv
-
-During training process, the following information can be used to monitor and evaluate the performance of the transfered model:
-::
-    device= cpu
-    transfer learning process.
-    data loaded.
-    start training...
-    Epoch 0-0 Train acc: 0.544000,Test Acc: 0.489786,time0:00:08.688707
-    Epoch 1-0 Train acc: 0.674000,Test Acc: 0.857939,time0:00:05.190997
-    Epoch 2-0 Train acc: 0.748000,Test Acc: 0.813835,time0:00:05.426035
-    Epoch 3-0 Train acc: 0.778000,Test Acc: 0.753946,time0:00:05.180632
-    Epoch 4-0 Train acc: 0.854000,Test Acc: 0.776230,time0:00:05.236281
-    Epoch 5-0 Train acc: 0.886000,Test Acc: 0.817549,time0:00:05.219122
-    Epoch 6-0 Train acc: 0.926000,Test Acc: 0.889044,time0:00:05.470729
 
 
 During the prediction process, TandemMod generates the following files. The prediction result file is named "HEK293T.prediction.tsv". 

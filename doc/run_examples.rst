@@ -44,7 +44,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step.
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step.
 ::
     #m6A
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/IVET/IVET_m6A_guppy_single  demo/IVET_reference.fa --processes 40 --fit-global-scale --include-event-stdev
@@ -214,7 +214,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step. Curlcake reference file can be download `here <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE124309&format=file&file=GSE124309%5FFASTA%5Fsequences%5Fof%5FCurlcakes%2Etxt%2Egz>`_. 
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step. Curlcake reference file can be download `here <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE124309&format=file&file=GSE124309%5FFASTA%5Fsequences%5Fof%5FCurlcakes%2Etxt%2Egz>`_. 
 ::
     #m6A
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/curlcake/curlcake_m6A_guppy_single  demo/curlcake_reference.fa --processes 40 --fit-global-scale --include-event-stdev
@@ -366,7 +366,7 @@ Convert multi-reads FAST5 files to single-read FAST5 files. If the data generate
 
 **3. Tombo resquiggling**
 
-In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-plac. No separate files are generated in this step. ELIGOS reference file can be download `here <https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/nar/49/2/10.1093_nar_gkaa620/1/gkaa620_supplemental_files.zip?Expires=1690555116&Signature=Mv7ppemTnplIZAvv6G3W-lob1eQwK5IvNeIIF-1GM8Jy93AdT6ALUynRjW3HQAyCMgkMW-0WnXktuVJfKDCUXiiwvjZ9z5iO5LksCl1e6yEA5dgRlr-FVUrDbj81NIfUJNhKReo5gxRYc~f7wbFZRcy9CcSB-D1DloUmv-4qdcydr35sM-YDKgfyNfaE-ZKnCZZ1KydDNtx7oRfYHCof-a3oHSNgxn5DFM9bGCq147cw6i9B1bCURAPLltdPzR4i7cBXmIRoNZuVkjLe8EktJPg47v9ElqlPUlZfAqoaESbmPtEs8NLoX~~82o~eMrjwomK4W5CzgwAZhJJIeelr7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA>`_. 
+In this step, the sequence obtained by basecalling is aligned or mapped to a reference genome or a known sequence. Then the corrected sequence is then associated with the corresponding current signals. The resquiggling process is typically performed in-place. No separate files are generated in this step. ELIGOS reference file can be download `here <https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/nar/49/2/10.1093_nar_gkaa620/1/gkaa620_supplemental_files.zip?Expires=1690555116&Signature=Mv7ppemTnplIZAvv6G3W-lob1eQwK5IvNeIIF-1GM8Jy93AdT6ALUynRjW3HQAyCMgkMW-0WnXktuVJfKDCUXiiwvjZ9z5iO5LksCl1e6yEA5dgRlr-FVUrDbj81NIfUJNhKReo5gxRYc~f7wbFZRcy9CcSB-D1DloUmv-4qdcydr35sM-YDKgfyNfaE-ZKnCZZ1KydDNtx7oRfYHCof-a3oHSNgxn5DFM9bGCq147cw6i9B1bCURAPLltdPzR4i7cBXmIRoNZuVkjLe8EktJPg47v9ElqlPUlZfAqoaESbmPtEs8NLoX~~82o~eMrjwomK4W5CzgwAZhJJIeelr7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA>`_. 
 ::
     #m7G
     tombo resquiggle --overwrite --basecall-group Basecall_1D_001 demo/ELIGOS/ELIGOS_m7G_guppy_single  demo/ELIGOS_reference.fa --processes 40 --fit-global-scale --include-event-stdev
