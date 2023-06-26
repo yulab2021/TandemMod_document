@@ -44,7 +44,7 @@ The following modules are needed to run TandemMod.
 
 Conda is recommended for package management, you can create a new conda environment and then install the packages. Here's an example of how you can do it. Create a new conda environment::
     
-    conda create -n TandemMod python=3.7.3
+    conda create -n TandemMod python=3.7.12
 
 Activate the newly created environment::
 
