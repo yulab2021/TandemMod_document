@@ -96,8 +96,8 @@ The training process can be stopped manually based on the performance on the tes
 
 Transfer learning
 ********************
-In transfer learning mode, you can used a pretrained model to retrain the bottom layers to identify new modification. This mode leverages the knowledge acquired by the pretrained model on a large dataset and applies it to a specific target task with potentially limited data. To fine-tune the TandemMod model using other dataset, you can utilize the transfer run mode by setting the ``--run_mode`` argument to "transfer"::
-
+In transfer learning mode, you can used a pretrained model to retrain the bottom layers to identify new modification. This mode leverages the knowledge acquired by the pretrained model on a large dataset and applies it to a specific target task with potentially limited data. To fine-tune the TandemMod model using other dataset, you can utilize the transfer run mode by setting the ``--run_mode`` argument to "transfer":
+::
     python scripts/TandemMod.py --run_mode transfer \
           --pretrained_model model/m6A.pkl \
           --new_model model/m6Am.pkl
