@@ -76,7 +76,7 @@ In order to evaluate the performance during the training process, it is importan
     python scripts/train_test_split.py --input_file m6A.feature.tsv --train_file m6A_train.feature.tsv --test_file m6A_test.feature.tsv --train_ratio 0.8
 
 To train the TandemMod model using labelled training dataset, you can set the ``--run_mode`` argument to "train". This allows the model to be trained from scratch. Test data are required to evaluation the model performance.
-
+::
     python scripts/TandemMod.py --run_mode train \
           --new_model model/m6A.pkl \
           --train_data_mod data/m6A_train.feature.tsv \
