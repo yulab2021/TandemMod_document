@@ -55,22 +55,19 @@ Install the required modules::
     conda config --add channels conda-forge
     conda config --add channels bioconda
 
-    conda install -c bioconda samtools=1.3.1
     conda install -c bioconda minimap2=2.17
-    conda install -c anaconda h5py=3.8.0
-    conda install -c conda-forge statsmodels=0.10.0
+    conda install -c conda-forge numpy=1.19.5
+    conda install -c anaconda h5py=3.7.0
     conda install -c conda-forge joblib=0.16.0
-    conda install -c bioconda pysam=0.16.0.1
-    conda install -c conda-forge tqdm=4.39.0
     conda install -c anaconda scikit-learn=0.22
     conda install -c bioconda ont-tombo=1.5.1
     conda install -c bioconda ont_vbz_hdf_plugin=1.0.1
     conda install -c bioconda ont-fast5-api=4.1.1
-    conda install -c conda-forge numpy=1.20.0
+    conda install -c conda-forge statsmodels=0.10.0
 
 Or, some of the modules can be installed by pip::
 
-    pip install h5py==3.8.0
+    pip install h5py==3.7.0
     pip install statsmodels==0.10.0
     pip install joblib==0.16.0
     pip install pysam==0.16.0.1
@@ -79,7 +76,7 @@ Or, some of the modules can be installed by pip::
     pip install torch==1.9.1
     pip install ont-tombo==1.5.1
     pip install ont-fast5-api==4.1.1
-    pip install numpy==1.20.0
+    pip install numpy==1.19.5
 
 Guppy can be obtained from `Oxford Nanopore Technologies <https://nanoporetech.com/>`_ or from this `mirror <https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu-6.1.5-1.el7.x86_64.rpm>`_. Install Guppy using dpkg::
 
