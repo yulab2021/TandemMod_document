@@ -120,6 +120,19 @@ The train-test split is performed randomly, ensuring that the data points in eac
 
 The training set is used to train the model, allowing it to learn patterns and relationships present in the data. The testing set, on the other hand, is used to assess the model's performance on new, unseen data. It serves as an independent evaluation set to measure how well the trained model generalizes to data it has not encountered before. By evaluating the model on the testing set, we can estimate its performance, detect overfitting (when the model performs well on the training set but poorly on the testing set) and assess its ability to make accurate predictions on new data.
 ::
+    usage: train_test_split.py [-h] [--input_file INPUT_FILE]
+                               [--train_file TRAIN_FILE] [--test_file TEST_FILE]
+                               [--train_ratio TRAIN_RATIO]
+    
+    Split a feature file into training and testing sets.
+    
+    optional arguments:
+      -h, --help                  show this help message and exit
+      --input_file INPUT_FILE     Path to the input feature file
+      --train_file TRAIN_FILE     Path to the train feature file
+      --test_file TEST_FILE       Path to the test feature file
+      --train_ratio TRAIN_RATIO   Ratio of instances to use for training (default: 0.8)
+
     #m6A
     python scripts/train_test_split.py --input_file demo/IVET/m6A.feature.tsv --train_file demo/IVET/m6A.train.feature.tsv --test_file demo/IVET/m6A.test.feature.tsv --train_ratio 0.8
     
@@ -255,6 +268,19 @@ The train-test split is performed randomly, ensuring that the data points in eac
 
 The training set is used to train the model, allowing it to learn patterns and relationships present in the data. The testing set, on the other hand, is used to assess the model's performance on new, unseen data. It serves as an independent evaluation set to measure how well the trained model generalizes to data it has not encountered before. By evaluating the model on the testing set, we can estimate its performance, detect overfitting (when the model performs well on the training set but poorly on the testing set) and assess its ability to make accurate predictions on new data.
 ::
+    usage: train_test_split.py [-h] [--input_file INPUT_FILE]
+                               [--train_file TRAIN_FILE] [--test_file TEST_FILE]
+                               [--train_ratio TRAIN_RATIO]
+    
+    Split a feature file into training and testing sets.
+    
+    optional arguments:
+      -h, --help                  show this help message and exit
+      --input_file INPUT_FILE     Path to the input feature file
+      --train_file TRAIN_FILE     Path to the train feature file
+      --test_file TEST_FILE       Path to the test feature file
+      --train_ratio TRAIN_RATIO   Ratio of instances to use for training (default: 0.8)
+
     #m6A
     python scripts/train_test_split.py --input_file demo/curlcake/m6A.feature.tsv --train_file demo/curlcake/m6A.train.feature.tsv --test_file demo/curlcake/m6A.test.feature.tsv --train_ratio 0.8
     
@@ -407,6 +433,19 @@ The train-test split is performed randomly, ensuring that the data points in eac
 
 The training set is used to train the model, allowing it to learn patterns and relationships present in the data. The testing set, on the other hand, is used to assess the model's performance on new, unseen data. It serves as an independent evaluation set to measure how well the trained model generalizes to data it has not encountered before. By evaluating the model on the testing set, we can estimate its performance, detect overfitting (when the model performs well on the training set but poorly on the testing set) and assess its ability to make accurate predictions on new data.
 ::
+    usage: train_test_split.py [-h] [--input_file INPUT_FILE]
+                               [--train_file TRAIN_FILE] [--test_file TEST_FILE]
+                               [--train_ratio TRAIN_RATIO]
+    
+    Split a feature file into training and testing sets.
+    
+    optional arguments:
+      -h, --help                  show this help message and exit
+      --input_file INPUT_FILE     Path to the input feature file
+      --train_file TRAIN_FILE     Path to the train feature file
+      --test_file TEST_FILE       Path to the test feature file
+      --train_ratio TRAIN_RATIO   Ratio of instances to use for training (default: 0.8)
+
     #m7G
     python scripts/train_test_split.py --input_file demo/ELIGOS/m7G.feature.tsv --train_file demo/ELIGOS/m7G.train.feature.tsv --test_file demo/ELIGOS/m7G.test.feature.tsv --train_ratio 0.8
     
@@ -418,6 +457,28 @@ The training set is used to train the model, allowing it to learn patterns and r
 
 To transfer the pretrained TandemMod model to new types of modifications, you can set the ``--run_mode`` argument to "transfer". TandemMod accepts both modified and unmodified feature files as input. Additionally, test feature files are necessary to evaluate the model's performance. You can specify the pretrained model by using the argument ``--pretrained_model`` and the new model save path by using the argument ``--new_model``. The model's training epochs can be defined using the argument ``--epochs``, and the model states will be saved at the end of each epoch. TandemMod will preferentially use the ``GPU`` for training if CUDA is available on your device; otherwise, it will utilize the ``CPU`` mode. The training process duration can vary, depending on the size of your dataset and the computational capacity, and may last for several hours. 
 ::
+    usage: TandemMod.py [-h] --run_mode RUN_MODE
+                        [--pretrained_model PRETRAINED_MODEL]
+                        [--new_model NEW_MODEL] [--train_data_mod TRAIN_DATA_MOD]
+                        [--train_data_unmod TRAIN_DATA_UNMOD]
+                        [--test_data_mod TEST_DATA_MOD]
+                        [--test_data_unmod TEST_DATA_UNMOD]
+                        [--feature_file FEATURE_FILE]
+                        [--predict_result PREDICT_RESULT] [--epoch EPOCH]
+    
+    TandemMod, multiple types of RNA modification detection.
+    
+    optional arguments:
+      -h, --help                               show this help message and exit
+      --run_mode RUN_MODE                      Run mode. Default is train
+      --pretrained_model PRETRAINED_MODEL      Pretrained model file.
+      --new_model NEW_MODEL                    New model file to be saved.
+      --train_data_mod TRAIN_DATA_MOD          Train data file, modified.
+      --train_data_unmod TRAIN_DATA_UNMOD      Train data file, unmodified.
+      --test_data_mod TEST_DATA_MOD            Test data file, modified.
+      --test_data_unmod TEST_DATA_UNMOD        Test data file, unmodified.
+      --epoch EPOCH                            Training epoch
+
     python scripts/TandemMod.py --run_mode transfer \
       --pretrained_model demo/model/m6A.demo.IVET.pkl \
       --new_model demo/model/m7G.demo.ELIGOS.transfered_from_IVET_m6A.pkl \
