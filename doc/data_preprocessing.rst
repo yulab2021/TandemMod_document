@@ -96,7 +96,7 @@ Argument name                       Required    Default              Description
 --reference                         Yes         NA                    Reference transcripts, in fasta format.
 -p                                  No          1                     Number of processes to run.
 --sam                               Yes         NA                    Aligment results, output from minimap2.
--o                                  Yes         NA                    Output file contraining current signals.
+--output                            Yes         NA                    Output file contraining current signals.
 --clip                              Yes         NA                    Base clip at both ends.
 =================================   ==========  ===================  ============================================================================================================
 
@@ -109,9 +109,9 @@ Arguments
 =================================   ==========  ===================  ============================================================================================================
 Argument name                       Required    Default              Description
 =================================   ==========  ===================  ============================================================================================================
--signal_file                        Yes         NA                    File contraining current signals.
+--signal_file                       Yes         NA                    File contraining current signals.
 --reference                         Yes         NA                    Reference transcripts, in fasta format.
--label                              Yes         NA                    Prefix of output.
--out_dir                            Yes         NA                    Output directory.
+--output                            Yes         NA                    Output file contraining features.
+--clip                              Yes         NA                    Base clip at both ends.
 =================================   ==========  ===================  ============================================================================================================
 
