@@ -84,7 +84,7 @@ After installing all the essential packages,  reset the environment's state by d
     conda deactivate
     conda activate TandemMod
 
-We have also provided a yaml file in the repository so you can install dependent through the configuration file::
+We have also provided a yaml file in the repository so you can install the dependencies through the configuration file::
 
     conda env create -f TandemMod.yaml
 
