@@ -93,7 +93,7 @@ The source code and data processing scripts are available on `GitHub <https://gi
 
     git clone https://github.com/yulab2021/TandemMod.git
 
-TandemMod offers three modes: `de novo training <run_examples.rst#Train m6A model using IVET m6A dataset>`_, transfer learning, and prediction. Researchers can train from scratch, fine-tune pre-trained models, or apply existing models for predictions. It provides a user-friendly solution for studying RNA modifications.
+TandemMod offers three modes: de novo training, transfer learning, and prediction. Researchers can train from scratch, fine-tune pre-trained models, or apply existing models for predictions. It provides a user-friendly solution for studying RNA modifications.
 
 In the provided repository, the pretrained models are located under the ``./models`` directory, and the data processing scripts and the main script are located under the ``./scripts`` directory:: 
 
