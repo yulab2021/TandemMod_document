@@ -79,7 +79,7 @@ Guppy can be obtained from `Oxford Nanopore Technologies <https://nanoporetech.c
 
 ``libhdf5`` and ``libcrypto`` are required for running guppy.
 
-After installing all the essential packages,  reset the environment's state by deactivating and reactivating the environment:
+The entire installation will take about 10 minutes. After installing all the essential packages,  reset the environment's state by deactivating and reactivating the environment:
 ::
     conda deactivate
     conda activate TandemMod

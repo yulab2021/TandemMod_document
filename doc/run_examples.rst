@@ -621,3 +621,5 @@ The prediction result "demo/HEK293T/HEK293T.prediction.tsv" provides prediction 
     XM_005261965.4  10507   AAACA   60e0f6a3-2166-4730-9a10-8f8aaa750b37    unmod        0.030169742
     XM_005261965.4  10511   AAACT   60e0f6a3-2166-4730-9a10-8f8aaa750b37    unmod        0.020174831
     XM_005261965.4  10592   AGACT   60e0f6a3-2166-4730-9a10-8f8aaa750b37    mod          0.7666112
+
+The execution time for each demonstration is estimated to be approximately 3-10 minutes.
